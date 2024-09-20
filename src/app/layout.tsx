@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
-import {oxygenFont} from '@/app/fonts'
+import { oxygenFont } from "@/app/fonts";
 import "./globals.css";
+import DashboardLayout from "./ui/dashboard-layout";
 
 export const metadata: Metadata = {
   title: "Create Next App",
@@ -14,10 +15,10 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body
-        className={`${oxygenFont.className} antialiased`}
-      >
-        {children}
+      <body className={`${oxygenFont.className} antialiased`}>
+        <main>
+          <DashboardLayout>{children}</DashboardLayout>
+        </main>
       </body>
     </html>
   );
