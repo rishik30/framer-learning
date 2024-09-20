@@ -12,7 +12,8 @@ export default function SideNav() {
         </div>
         <div className="flex-auto py-6">
           <ul>
-            <SideNavItem text="Basic" />
+            <SideNavItem text="Basic" href="/basic" />
+            <SideNavItem text="Variants" href="/variants" />
           </ul>
         </div>
         <div className="flex-1"></div>
@@ -23,12 +24,13 @@ export default function SideNav() {
 
 interface SideNavItemProps {
   text: string;
+  href: string;
 }
 
-const SideNavItem: React.FC<SideNavItemProps> = ({ text }) => {
+const SideNavItem: React.FC<SideNavItemProps> = ({ text, href }) => {
   return (
-    <li className="border-foregroundSecondary hover:bg-foregroundSecondary group cursor-pointer rounded-lg border p-2 hover:shadow">
-      <Link href={"/basic"}>
+    <li className="border-foregroundSecondary hover:bg-foregroundSecondary group mb-4 cursor-pointer rounded-lg border p-2 hover:shadow">
+      <Link href={href}>
         <p className="text-foregroundSecondary group-hover:text-white">
           {text}
         </p>
